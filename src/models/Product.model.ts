@@ -8,17 +8,18 @@ class Product extends Model {
     @Column({
         type: DataType.STRING(100) //String es como el VARCHAR
     })
-    name: string
+    declare name: string
     
     @Column({
         type: DataType.INTEGER
     })
-    price: number
+    declare price: number
 
+    @Default(true)
     @Column({
         type: DataType.BOOLEAN
     })
-    availability: boolean
+    declare availability: boolean
 
 }
 
