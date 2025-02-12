@@ -1,5 +1,7 @@
 import  express  from "express";
 import colors from 'colors';
+import cors, { CorsOptions } from 'cors';
+import morgan from 'morgan';
 import router from './router';
 import db from "./config/db";
 
@@ -21,8 +23,22 @@ connectDB();
 //Instancia de express
 const server = express();
 
+//Permitir conexiones 
+const corsOptions : CorsOptions = {
+    origin: function(origin, callback){
+        console.log(origin);
+        if(origin === process.env.FRONTED_URL, process.env.API_URL){
+            callback(null, true);
+        } else {
+            callback(new Error('Error de CORS'));
+        }
+    }
+}
+server.use( cors(corsOptions) );
 //Leer datos de formularios
 server.use(express.json());
+
+server.use(morgan('dev'));
 
 server.use('/api/products', router);
 
