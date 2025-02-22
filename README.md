@@ -1,4 +1,4 @@
-# Products API REST  -  [Porducts Page](https://crud-productos-ashen.vercel.app/) 
+# Products API REST  -  [Products Page](https://crud-productos-ashen.vercel.app/) 
 
 ![Node.js](https://img.shields.io/badge/Node.js-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-blue)
