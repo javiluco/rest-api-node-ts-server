@@ -14,10 +14,10 @@ router.get('/:id',
 
 router.post('/', 
     //Validación
-    body('name').notEmpty().withMessage('El nombre del producto no puede ir vacio'),
+    body('name').notEmpty().withMessage('El nombre del producto no puede ir vacío'),
     body('price')
             .isNumeric().withMessage('Valor no válido')
-            .notEmpty().withMessage('El precio del producto no puede ir vacio')
+            .notEmpty().withMessage('El precio del producto no puede ir vacío')
             .custom( value => value>0 ).withMessage('Precio no válido'),
     handleInputErrors,
     createProduct
@@ -25,10 +25,10 @@ router.post('/',
 
 router.put('/:id', 
     param('id').isInt().withMessage('ID no válido'),
-    body('name').notEmpty().withMessage('El nombre del producto no puede ir vacio'),
+    body('name').notEmpty().withMessage('El nombre del producto no puede ir vacío'),
     body('price')
             .isNumeric().withMessage('Valor no válido')
-            .notEmpty().withMessage('El precio del producto no puede ir vacio')
+            .notEmpty().withMessage('El precio del producto no puede ir vacío')
             .custom( value => value>0 ).withMessage('Precio no válido'),
     body('availability').isBoolean().withMessage('Valor para la disponibilidad no válido'),
     handleInputErrors,
